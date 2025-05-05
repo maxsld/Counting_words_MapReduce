@@ -24,7 +24,6 @@ def shuffle(mapped_results):
 
 # === MAIN ===
 if __name__ == "__main__":
-    # Chemin des fichiers textes (comme dans ton code original)
     text_files = ['./texts/file1.txt']
 
     # Phase MAP
