@@ -2,7 +2,6 @@ import socket
 import pickle
 from collections import defaultdict
 
-# Ce port doit être unique par worker
 MY_PORT = 9002
 
 COORDINATOR_ADDRESS = ('localhost', 7500) 

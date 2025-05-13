@@ -3,13 +3,11 @@ import pickle
 from collections import Counter
 import re
 
-# Port sur lequel ce map worker écoute (à adapter par machine)
 MY_PORT = 8001
 
-# Liste des Reduce Workers avec leurs IP et port
 REDUCE_WORKERS = [
-    ('localhost', 9001),  # exemple IP du reduce worker 1
-    ('localhost', 9002)   # exemple IP du reduce worker 2
+    ('localhost', 9001),
+    ('localhost', 9002)
 ]
 
 def hash_word(word):
@@ -36,7 +34,7 @@ def shuffle_and_send(mapped_data):
 
 def start():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(('0.0.0.0', MY_PORT))  # pour accepter depuis n'importe où
+        s.bind(('0.0.0.0', MY_PORT))
         s.listen()
         print(f"[MAP WORKER] En écoute sur le port {MY_PORT}...")
 

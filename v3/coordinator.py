@@ -6,7 +6,7 @@ import pickle
 MAP_WORKERS = [('localhost', 8001), ('localhost', 8002)]
 REDUCE_WORKERS = [('localhost', 9001), ('localhost', 9002)]
 
-TEXT_FILES = ['../texts/file1.txt', '../texts/file2.txt']  # un fichier par map worker
+TEXT_FILES = ['../texts/file1.txt', '../texts/file2.txt']
 
 def send_data(address, data):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -34,7 +34,7 @@ def collect_reduces():
     print("[COORDINATOR] En attente des résultats des reduce workers...")
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(('0.0.0.0', 7500))  # écoute sur toutes les interfaces
+        s.bind(('0.0.0.0', 7500))
         s.listen()
 
         for _ in range(len(REDUCE_WORKERS)):
