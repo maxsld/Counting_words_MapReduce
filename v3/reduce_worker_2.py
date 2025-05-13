@@ -16,7 +16,7 @@ def reduce_task(pairs):
 
 def start():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(('0.0.0.0', MY_PORT))  # écoute sur toutes les interfaces
+        s.bind(('0.0.0.0', MY_PORT))
         s.listen()
         print(f"[REDUCE WORKER] En écoute sur le port {MY_PORT}...")
 
